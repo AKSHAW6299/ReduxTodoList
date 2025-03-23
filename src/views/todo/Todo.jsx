@@ -11,7 +11,7 @@ function Todo() {
 
 
 
-  
+
 
   return (
     <>
@@ -28,7 +28,7 @@ function Todo() {
             placeholder="Add a new task..."
           />
           <button
-            onClick={() => dispatch(addTodo(inputData))}
+            onClick={() => dispatch(addTodo(inputData), setInputData(''))}
             className="w-full mt-3 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
           >
             Add Task
