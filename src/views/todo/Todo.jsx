@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { addTodo, deleteTodo, removeTodo } from '../../actions/index'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function Todo() {
 
+  const anandList = useSelector((state) => state.todoReducers.anandList)
+  console.log('Store data :', anandList);
   const dispatch = useDispatch();
 
   const [inputData, setInputData] = useState('')
-  console.log('Input data :', inputData);
 
+  // To get data from store
 
 
 
@@ -35,6 +38,25 @@ function Todo() {
           </button>
         </div>
       </div>
+
+      {/* Display To-Do List */}
+      <ul className="mt-4">
+        {anandList.map((todo) => (
+          <li
+            key={todo.id}
+            className="flex justify-between items-center bg-gray-100 p-2 my-2 rounded-md"
+          >
+            <span>{todo.data}</span>
+            <button
+              onClick={() => dispatch(deleteTodo(inputData))}
+              className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
     </>
   )
 }

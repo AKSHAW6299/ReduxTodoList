@@ -1,5 +1,3 @@
-import { addTodo } from "../actions";
-
 const initialData = {
     anandList: []
 }
