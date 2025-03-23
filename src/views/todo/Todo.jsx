@@ -57,6 +57,8 @@ function Todo() {
         ))}
       </ul>
 
+      <button onClick={() => dispatch(removeTodo())}>Rest All</button>
+
     </>
   )
 }
