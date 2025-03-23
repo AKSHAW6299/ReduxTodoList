@@ -48,7 +48,7 @@ function Todo() {
           >
             <span>{todo.data}</span>
             <button
-              onClick={() => dispatch(deleteTodo(inputData))}
+              onClick={() => dispatch(deleteTodo(todo.id))}
               className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
             >
               Delete
